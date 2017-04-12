@@ -10,6 +10,7 @@ require 'erb'
 
 require 'marketplace/item'
 require 'marketplace/checkout'
+require 'marketplace/promotional_rule'
 
 # Our marketplace module
 module Marketplace

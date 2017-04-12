@@ -1,0 +1,5 @@
+# temporary bundle
+.bundle/*
+
+# temporary vim editor
+*.swp

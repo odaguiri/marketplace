@@ -16,14 +16,21 @@ Our check-out can scan items in any order, and because our promotions will chang
 
 The interface to our checkout looks like this (shown in Ruby):
 
-```ruby
-co = Checkout.new(promotional_rules)
-co.scan(item)
-co.scan(item)
-price = co.total
+```sh
+bin/console
 ```
 
-Implement a checkout system that fulfills these requirements. Do this outside of any frameworks. We’re looking for candidates to demonstrate their knowledge of TDD.
+```ruby
+promotional_rules = []
+promotional_rules << Marketplace::PromotionalRule.new(code: '001', price: BigDecimal.new('8.50'), minimum_quantity: 2)
+promotional_rules << Marketplace::PromotionalRule.new(code: 'total_discount', discount: BigDecimal.new('0.1'), price: BigDecimal.new('60.0'))
+
+co = Marketplace::Checkout.new(promotional_rules)
+co.scan(Marketplace::Item.new(code: '001', name: 'Lavender heart', price: BigDecimal.new('9.25')))
+co.scan(Marketplace::Item.new(code: '002', name: 'Personalised cufflinks', price: BigDecimal.new('45.0')))
+co.scan(Marketplace::Item.new(code: '003', name: 'Kids T-shirt', price: BigDecimal.new('19.95')))
+
+price = co.total
 
 ## Test data
 

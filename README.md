@@ -33,10 +33,9 @@ co.scan(Marketplace::Item.new(code: '002', name: 'Personalised cufflinks', price
 co.scan(Marketplace::Item.new(code: '003', name: 'Kids T-shirt', price: BigDecimal.new('19.95')))
 
 price = co.total
+```
 
 ## Test data
-
-```
 Basket: 001,002,003
 Total price expected: £66.78
 
@@ -45,4 +44,3 @@ Total price expected: £36.95
 
 Basket: 001,002,001,003
 Total price expected: £73.76
-```

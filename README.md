@@ -24,7 +24,7 @@ bin/console
 
 ```ruby
 promotional_rules = []
-promotional_rules << Marketplace::PromotionalRule.new(code: '001', price: BigDecimal.new('8.50'), minimum_quantity: 2)
+promotional_rules << Marketplace::PromotionalRule.new(code: '001', discount: BigDecimal.new('0.081'), minimum_quantity: 2)
 promotional_rules << Marketplace::PromotionalRule.new(code: 'total_discount', discount: BigDecimal.new('0.1'), price: BigDecimal.new('60.0'))
 
 co = Marketplace::Checkout.new(promotional_rules)

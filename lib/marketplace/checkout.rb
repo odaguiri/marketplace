@@ -34,7 +34,7 @@ module Marketplace
         items = select_by_code(rule.code)
         next unless items.size.positive?
         price = items[0].price
-        price = rule.price if items.size >= rule.minimum_quantity
+        price = price * (1 - rule.discount) if items.size >= rule.minimum_quantity
         items.size * price
       end.compact
     end

@@ -10,7 +10,7 @@ module Marketplace
       ]
 
       @promotional_rules = [
-        PromotionalRule.new(code: '001', price: BigDecimal.new('8.50'), minimum_quantity: 2),
+        PromotionalRule.new(code: '001', discount: BigDecimal.new('0.081'), minimum_quantity: 2),
         PromotionalRule.new(code: 'total_discount', discount: BigDecimal.new('0.1'), price: BigDecimal.new('60.0'))
       ]
     end
